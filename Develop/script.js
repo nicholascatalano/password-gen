@@ -1,20 +1,18 @@
 // Assignment code here
-var numbers = ["1234567890"];
-var lowerCase = ["abcdefghijklmnopqrstuvwxyz"];
-var upperCase = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
-var specialChar = [" !#$%&'()*+,-./:;<=>?@[]^_`{|}~"];
+var numbers = "1234567890";
+var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var specialChar = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 
 function generatePassword() {
   var password = "";
   var passwordChoices = "";
-  // initial prompt when you enter website
+  // initial prompt when you enter click button on website
   var passwordLength = prompt(
     "Please input the number of characters you would like your password to be, between 8 - 128."
   );
-  // passwordLength = parseInt(passwordLength);
 
   // error messages if user enters anything other than a number between 8-128
-
   if (passwordLength < 8) {
     alert("Password must be between 8-128!");
     return;
@@ -26,23 +24,22 @@ function generatePassword() {
   }
 
   // second prompt for lowercase letters
-
   var lowerCaseOption = confirm("Would you like to include lowercase letters?");
   if (lowerCaseOption) {
     // referenced mdn article on the use of += in order to add the option choice into the left var
-    passwordChoices += lowerCaseOption;
+    passwordChoices += lowerCase;
   }
 
   // third prompt for uppercase letters
   var upperCaseOption = confirm("Would you like to include uppercase letters?");
   if (upperCaseOption) {
-    passwordChoices += upperCaseOption;
+    passwordChoices += upperCase;
   }
 
   // fourth prompt for numbers
   var numbersOption = confirm("Would you like to include numbers?");
   if (numbersOption) {
-    passwordChoices += numbersOption;
+    passwordChoices += numbers;
   }
 
   // fifth prompt for special characters
@@ -50,7 +47,7 @@ function generatePassword() {
     "Would you like to include special characters?"
   );
   if (specialCharOptions) {
-    passwordChoices += specialCharOptions;
+    passwordChoices += specialChar;
   }
 
   // for loop to randomize password each time depending on password length
