@@ -52,9 +52,13 @@ function generatePassword() {
 
   // for loop to randomize password each time depending on password length
   for (var i = 0; i < passwordLength; i++) {
-    password =
+    // AskBCS assisted with issue here in which password was only returning one character from first if...
+    // ...added "+" in front of equal sign to stop overwriting password variable in each iteration of loop
+    password +=
       passwordChoices[Math.floor(Math.random() * passwordChoices.length)];
   }
+  // this stops the function from returning undefined
+  return password;
 }
 
 // Get references to the #generate element
