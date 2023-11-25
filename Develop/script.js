@@ -53,12 +53,11 @@ function generatePassword() {
     passwordChoices += specialCharOptions;
   }
 
-  // 1. Prompt the user for the password criteria
-  //    a. Password length 8 >= 128
-  //    b. Lowercase, uppercase, numbers, special characters
-  // 2. Confirm input
-  // 3. Generate password
-  // 4. Display password
+  // for loop to randomize password each time depending on password length
+  for (var i = 0; i < passwordLength; i++) {
+    password =
+      passwordChoices[Math.floor(Math.random() * passwordChoices.length)];
+  }
 }
 
 // Get references to the #generate element
